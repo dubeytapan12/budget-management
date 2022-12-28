@@ -1,0 +1,61 @@
+
+CREATE TABLE [User] (
+	Id int NOT NULL,
+	Username varchar(80) NOT NULL UNIQUE,
+	Password varchar(80) NOT NULL,
+  CONSTRAINT [PK_USER] PRIMARY KEY CLUSTERED
+  (
+  [Id] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)
+GO
+CREATE TABLE [Account] (
+	Id int NOT NULL,
+	Account varchar(80) NOT NULL UNIQUE,
+	Amout money NOT NULL,
+  CONSTRAINT [PK_ACCOUNT] PRIMARY KEY CLUSTERED
+  (
+  [Id] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)
+GO
+CREATE TABLE [Category] (
+	Id int NOT NULL,
+	Category varchar(80) NOT NULL,
+  CONSTRAINT [PK_CATEGORY] PRIMARY KEY CLUSTERED
+  (
+  [Id] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)
+GO
+CREATE TABLE [Expense] (
+	Id int NOT NULL,
+	ExpenseDate datetime NOT NULL,
+	AccountId int NOT NULL,
+	CategoryId int NOT NULL,
+	Amount money NOT NULL,
+	Notes varchar(500),
+  CONSTRAINT [PK_EXPENSE] PRIMARY KEY CLUSTERED
+  (
+  [Id] ASC
+  ) WITH (IGNORE_DUP_KEY = OFF)
+
+)
+GO
+
+
+
+ALTER TABLE [Expense] WITH CHECK ADD CONSTRAINT [Expense_fk0] FOREIGN KEY ([AccountId]) REFERENCES [Account]([Id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [Expense] CHECK CONSTRAINT [Expense_fk0]
+GO
+ALTER TABLE [Expense] WITH CHECK ADD CONSTRAINT [Expense_fk1] FOREIGN KEY ([CategoryId]) REFERENCES [Category]([Id])
+ON UPDATE CASCADE
+GO
+ALTER TABLE [Expense] CHECK CONSTRAINT [Expense_fk1]
+GO
+
