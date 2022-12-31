@@ -1,6 +1,6 @@
 
 CREATE TABLE [User] (
-	Id int NOT NULL,
+	Id int NOT NULL IDENTITY(1,1),
 	Username varchar(80) NOT NULL UNIQUE,
 	Password varchar(80) NOT NULL,
   CONSTRAINT [PK_USER] PRIMARY KEY CLUSTERED
@@ -11,7 +11,7 @@ CREATE TABLE [User] (
 )
 GO
 CREATE TABLE [Account] (
-	Id int NOT NULL,
+	Id int NOT NULL IDENTITY(1,1),
 	Account varchar(80) NOT NULL UNIQUE,
 	Amout money NOT NULL,
   CONSTRAINT [PK_ACCOUNT] PRIMARY KEY CLUSTERED
@@ -22,7 +22,7 @@ CREATE TABLE [Account] (
 )
 GO
 CREATE TABLE [Category] (
-	Id int NOT NULL,
+	Id int NOT NULL IDENTITY(1,1),
 	Category varchar(80) NOT NULL,
   CONSTRAINT [PK_CATEGORY] PRIMARY KEY CLUSTERED
   (
@@ -32,7 +32,7 @@ CREATE TABLE [Category] (
 )
 GO
 CREATE TABLE [Expense] (
-	Id int NOT NULL,
+	Id int NOT NULL IDENTITY(1,1),
 	ExpenseDate datetime NOT NULL,
 	AccountId int NOT NULL,
 	CategoryId int NOT NULL,
