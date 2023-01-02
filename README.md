@@ -19,3 +19,17 @@ MS Sql Server Management Studio
 <h1>SQL Scripts </h1>
 https://github.com/dubeytapan12/budget-management/blob/main/BudgetManagement_mssql_create.sql
 <h1>Entity Framework Core tools reference</h1>
+<b>Reference</b>
+https://learn.microsoft.com/en-us/ef/core/cli/dotnet<br/>
+Run the following commands to verify that EF Core CLI tools are correctly installed:<br/>
+dotnet ef
+
+if tool is not installed than you can install it with below command: (only if above command doesn't work) <br/>
+dotnet tool install --global dotnet-ef
+
+<h1>dotnet ef dbcontext scaffold for our Budget Management </h1>
+First install below package -</br>
+Microsoft.EntityFrameworkCore.Core </br>
+Microsoft.EntityFrameworkCore.SqlServer</br>
+Microsoft.EntityFrameworkCore.Design</br>
+Microsoft.EntityFrameworkCore.Tools</br>
