@@ -12,8 +12,8 @@ CREATE TABLE [User] (
 GO
 CREATE TABLE [Account] (
 	Id int NOT NULL IDENTITY(1,1),
-	Account varchar(80) NOT NULL UNIQUE,
-	Amout money NOT NULL,
+	AccountName varchar(80) NOT NULL UNIQUE,
+	Amount money NOT NULL,
   CONSTRAINT [PK_ACCOUNT] PRIMARY KEY CLUSTERED
   (
   [Id] ASC
